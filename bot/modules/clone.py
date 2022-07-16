@@ -12,6 +12,7 @@ from bot.helper.mirror_utils.status_utils.clone_status import CloneStatus
 from bot.helper.mirror_utils.download_utils.direct_link_generator import gdtot
 from bot import dispatcher, LOGGER, STOP_DUPLICATE, download_dict, download_dict_lock, Interval
 from bot.helper.ext_utils.parser import appdrive
+from bot.helper.ext_utils.exceptions import DirectDownloadLinkException
 from bot.helper.ext_utils.bot_utils import is_gdrive_link, is_gdtot_link, new_thread, is_appdrive_link
 
 
