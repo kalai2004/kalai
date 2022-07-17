@@ -61,6 +61,14 @@ class TgUploader:
         self.__listener.onUploadComplete(None, size, self.__msgs_dict, self.__total_files, self.__corrupted, self.name)
 
     def __upload_file(self, up_path, file_, dirpath):
+        if file_.startswith('www'):  
+            file_ = ' '.join(file_.split()[1:])
+            file_ = '@TamilMob_LinkZz' + file_.strip('-').strip('_')
+            new_path = ospath.join(dirpath, file_)
+            osrename(up_path, new_path)
+            up_path = new_path
+        else: cap_mono = f"<b>{file_}</b>"
+
         if CUSTOM_FILENAME is not None:
             cap_mono = f"<b>{CUSTOM_FILENAME} {file_}</b>"
             file_ = f"{CUSTOM_FILENAME} {file_}"
